@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+  max-width: 75rem;
+  margin: auto;
+  padding: 0 2%;
+}
+
+body {
+  background: #fff;
+  color: #000;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background: transparent;
+  transition: 2s;
+  padding: 18px 0;
+}
+header .header-contents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-contents .logo img {
+  max-width: 100%;
+  width: 130px;
+  height: auto;
+}
+header .header-contents #menu-icon {
+  font-size: 30px;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  display: none;
+}
+header .header-contents .nav-list {
+  display: flex;
+}
+header .header-contents .nav-list li {
+  position: relative;
+}
+header .header-contents .nav-list li a {
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: 500;
+  padding: 0 20px;
+}
+header .header-contents .nav-list li::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #f75023;
+  bottom: -3px;
+  left: 0;
+  transition: ease 0.4s;
+}
+header .header-contents .nav-list li:hover::after {
+  width: 100%;
+}
+header .header-contents .btn-top {
+  display: inline-block;
+  padding: 8px 25px;
+  background: transparent;
+  color: #000;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border: 2px solid #f75023;
+  border-radius: 20px;
+  transition: ease 0.5s;
+}
+header .header-contents .btn-top:hover {
+  transform: scale(1.05);
+  background: #f75023;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

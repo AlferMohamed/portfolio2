@@ -1,0 +1,86 @@
+@import 'reset';
+@import 'variables';
+@import 'utilities';
+
+body{
+    background: $background-color;
+    color: $text-color;
+}
+// header
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background: transparent;
+    transition: 2s;
+    padding: 18px 0;
+
+    .header-contents{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            img{
+                max-width: 100%;
+                width: 130px;
+                height: auto;
+            }
+        }
+        #menu-icon{
+            font-size: 30px;
+            color: $text-color;
+            z-index: 10;
+            cursor: pointer;
+            display: none;
+        }
+        .nav-list{
+            display: flex;
+
+            li{
+                position: relative;
+
+                a{
+                    font-size: $p-font;
+                    color: $text-color;
+                    font-weight: 500;
+                    padding: 0 20px;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    background: $primary-color;
+                    bottom: -3px;
+                    left: 0;
+                    transition: ease .40s;
+                }
+                &:hover::after{
+                    width: 100%;
+                }
+            }
+        }
+
+        .btn-top{
+            display: inline-block;
+            padding: 8px 25px;
+            background: transparent;
+            color: $text-color;
+            // font-size: $p-font;
+            letter-spacing: 1px;
+            font-weight: 500;
+            border: 2px solid $primary-color;
+            border-radius: 20px;
+            transition: ease .50s;
+
+            &:hover{
+                transform: scale(1.05);
+                background: $primary-color;
+                color: $background-color;
+            }
+        }
+    }
+}
+
