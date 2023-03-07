@@ -1,13 +1,10 @@
 @import 'reset';
 @import 'variables';
+@import 'base';
 @import 'utilities';
 
-body{
-    background: $background-color;
-    color: $text-color;
-}
 // header
-header{
+header {
     position: fixed;
     width: 100%;
     top: 0;
@@ -16,38 +13,41 @@ header{
     transition: 2s;
     padding: 18px 0;
 
-    .header-contents{
+    .header-contents {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         .logo {
-            img{
+            img {
                 max-width: 100%;
                 width: 130px;
                 height: auto;
             }
         }
-        #menu-icon{
+
+        #menu-icon {
             font-size: 30px;
-            color: $text-color;
+            color: #333;
             z-index: 10;
             cursor: pointer;
             display: none;
         }
-        .nav-list{
+
+        .nav-list {
             display: flex;
 
-            li{
+            li {
                 position: relative;
 
-                a{
-                    font-size: $p-font;
-                    color: $text-color;
+                a {
+                    // font-size: 10px;
+                    color: #333;
                     font-weight: 500;
                     padding: 0 20px;
                 }
-                &::after{
+
+                &::after {
                     content: '';
                     position: absolute;
                     width: 0;
@@ -57,17 +57,18 @@ header{
                     left: 0;
                     transition: ease .40s;
                 }
-                &:hover::after{
+
+                &:hover::after {
                     width: 100%;
                 }
             }
         }
 
-        .btn-top{
+        .btn-top {
             display: inline-block;
             padding: 8px 25px;
             background: transparent;
-            color: $text-color;
+            color: #333;
             // font-size: $p-font;
             letter-spacing: 1px;
             font-weight: 500;
@@ -75,12 +76,52 @@ header{
             border-radius: 20px;
             transition: ease .50s;
 
-            &:hover{
+            &:hover {
                 transform: scale(1.05);
                 background: $primary-color;
-                color: $background-color;
+                color: $primary-color;
             }
         }
     }
 }
 
+//showcase
+.showcase {
+    background: url("../img/background.jpg");
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+
+    .showcase-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 4rem;
+        align-items: center;
+        padding-top: 100px;
+
+        .showcase-text {
+            .social {
+                a {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 7px;
+                    background: rgba(128, 103, 240, 1);
+                    color: #fff;
+                    border-radius: 50%;
+                    margin-right: 15px;
+
+                    &:hover{
+                        background: $primary-color;
+                        transform: scale(1.05);
+                        transition: ease .5s;
+                    }
+                }
+            }
+        }
+        img {
+            width: 100%;
+            max-width: 425px;
+        }
+    }
+}
